@@ -12,3 +12,6 @@
 .flex__item {
   padding: 10px;
 }
+.flex__header {
+  font-size: 30px;
+}
