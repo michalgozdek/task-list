@@ -1,0 +1,11 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before{
+    box-sizing: inherit;
+}
+
+.body{
+    background-color: rgb(219, 224, 224);
+}
