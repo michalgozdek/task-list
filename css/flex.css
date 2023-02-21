@@ -1,14 +1,14 @@
-.flex{
-    border: 1px solid grey;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
+.flex {
+  border: 1px solid grey;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  background-color: #fff;
 }
 
-.flex__item{
-    padding: 20px;
+.flex__item {
+  padding: 10px;
 }

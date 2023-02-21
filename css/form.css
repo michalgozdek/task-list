@@ -1,0 +1,16 @@
+.form {
+  display: inline-block;
+}
+
+.form__input {
+  width: 500px;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 10px;
+  border: 1px solid rgb(170, 173, 173);
+}
+.form__button {
+  background-color: rgb(168, 75, 255);
+  color: #fff;
+  padding: 10px;
+}
