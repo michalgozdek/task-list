@@ -1,3 +1,6 @@
 .js-done {
   text-decoration: line-through;
 }
+.js-remove {
+  text-align: right;
+}
