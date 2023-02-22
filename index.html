@@ -22,6 +22,7 @@
     <link href="css/flex.css" rel="stylesheet" />
     <link href="css/form.css" rel="stylesheet" />
     <link href="css/grid.css" rel="stylesheet" />
+    <script defer src="js/code.js"></script>
   </head>
   <body class="body">
     <header>
@@ -32,14 +33,17 @@
         <span class="flex__header"> Dodaj nowe zadanie</span>
       </div>
       <div class="flex__item">
-        <form class="form">
-          <input class="form__input" placeholder="co dziś robimy?" />
+        <form class="form js-form">
+          <input class="form__input js-newTask" placeholder="co dziś robimy?" />
           <button class="form__button">Dodaj zadanie</button>
         </form>
       </div>
     </div>
     <div class="flex">
       <div class="flex__item">Lista zadań</div>
+      <div>
+        <ul class="js-task"></ul>
+      </div>
     </div>
   </body>
 </html>
