@@ -16,11 +16,21 @@
     for (const task of tasks) {
       htmlString += `
         <li>
+        <button class="js-remove">usuń</button>
         ${task.content}
         </li>
         `;
     }
     document.querySelector(".js-task").innerHTML = htmlString;
+
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    removeButtons.forEach((removeButtons, index) => {
+      removeButtons.addEventListener("click", () => {
+        tasks.splice(index, 1);
+        render();
+      });
+    });
   };
 
   const init = () => {
