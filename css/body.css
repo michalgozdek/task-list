@@ -11,10 +11,7 @@ html {
 .body {
   background-color: rgb(219, 224, 224);
   font-family: "Roboto Mono", monospace;
-  margin: auto;
-}
-
-.conteiner {
   margin: 0 auto;
   max-width: 900px;
+  padding: 10px;
 }
