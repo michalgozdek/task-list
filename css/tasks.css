@@ -6,4 +6,26 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   border-bottom: 2px solid rgb(219, 224, 224);
+  align-items: center;
+  padding: 10px;
+  grid-gap: 10px;
+}
+
+.tasks__buttonDone {
+  background-color: rgb(13, 129, 13);
+  color: white;
+  width: 25px;
+  height: 25px;
+  border: none;
+}
+.tasks__buttonDone:hover {
+  background-color: rgb(93, 218, 93);
+}
+
+.tasks__contentDone {
+  text-decoration: line-through;
+}
+
+.tasks__button-remove {
+  background: red;
 }

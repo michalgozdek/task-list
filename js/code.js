@@ -17,7 +17,7 @@
 
         ${task.done ? "✓" : ""}
         </button>
-        <span class="tasks__content${task.done ? "tasks__contentDone" : ""}">
+        <span class="tasks__content  ${task.done ? "tasks__contentDone" : ""}">
         ${task.content}
         </span>
         <button class"tasks__button tasks__button-remove js-remove">
