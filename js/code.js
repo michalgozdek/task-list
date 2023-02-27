@@ -5,6 +5,10 @@
     tasks[tasksIndex].done = !tasks[tasksIndex].done;
     render();
   };
+  const removeTask = (taskIndex) => {
+    tasks.splice(taskIndex, 1);
+    render();
+  };
 
   const render = () => {
     let htmlString = "";
@@ -30,10 +34,9 @@
 
     const removeButtons = document.querySelectorAll(".js-remove");
 
-    removeButtons.forEach((removeButtons, index) => {
+    removeButtons.forEach((removeButtons, taskIndex) => {
       removeButtons.addEventListener("click", () => {
-        tasks.splice(index, 1);
-        render();
+        removeTask(taskIndex);
       });
     });
 
