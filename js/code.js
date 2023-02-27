@@ -1,14 +1,5 @@
 {
-  const tasks = [
-    {
-      content: "zrób prace domową",
-      done: false,
-    },
-    {
-      content: "obejrzyj następny dział",
-      done: true,
-    },
-  ];
+  const tasks = [];
 
   const toggleTaskDone = (tasksIndex) => {
     tasks[tasksIndex].done = !tasks[tasksIndex].done;
@@ -21,12 +12,13 @@
     for (const task of tasks) {
       htmlString += `
         <li 
-        class="tasks__item js-task">
+        class="tasks__item js-tasks">
         <button class="tasks__button tasks__buttonDone js-done">
 
         ${task.done ? "✓" : ""}
         </button>
         <span class="tasks__content${task.done ? "tasks__contentDone" : ""}">
+        ${task.content}
         </span>
         <button class"tasks__button tasks__button-remove js-remove">
         🗑
@@ -45,7 +37,7 @@
       });
     });
 
-    const toggleDoneButtons = document.querySelectorAll(".js-buttonDone");
+    const toggleDoneButtons = document.querySelectorAll(".js-done");
 
     toggleDoneButtons.forEach((toggleDoneButtons, index) => {
       toggleDoneButtons.addEventListener("click", () => {

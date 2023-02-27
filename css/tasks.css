@@ -2,7 +2,7 @@
   list-style: none;
 }
 
-.task__item {
+.tasks__item {
   display: grid;
   grid-template-columns: auto 1fr auto;
   border-bottom: 2px solid rgb(219, 224, 224);
