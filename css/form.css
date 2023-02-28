@@ -1,12 +1,10 @@
 .form {
   display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
-
 .form__input {
-  width: 470px;
-  display: inline-block;
   margin-right: 15px;
-  padding: 10px;
   border: 1px solid rgb(170, 173, 173);
 }
 .form__button {
@@ -14,7 +12,6 @@
   color: #fff;
   padding: 10px;
 }
-
 .form__button:hover {
   background-color: hsl(271, 92%, 71%);
 }
