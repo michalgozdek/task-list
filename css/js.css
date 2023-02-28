@@ -1,7 +1,6 @@
 .tasks__contentDone {
   text-decoration: line-through;
 }
-
 .tasks__buttonDone {
   background-color: rgb(57, 235, 57);
   color: white;
