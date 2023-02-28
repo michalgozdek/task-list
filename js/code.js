@@ -27,14 +27,14 @@
       htmlString += `
         <li 
         class="tasks__item js-tasks">
-        <button class="tasks__button tasks__buttonDone js-done">
+        <button class="tasks__buttonDone js-done">
 
         ${task.done ? "✓" : ""}
         </button>
-        <span class="tasks__content  ${task.done ? "tasks__contentDone" : ""}">
+        <span class=" ${task.done ? "tasks__contentDone" : ""}">
         ${task.content}
         </span>
-        <button class="tasks__button tasks__button-remove js-remove">
+        <button class=" tasks__button-remove js-remove">
         🗑
         </button>
         </li>

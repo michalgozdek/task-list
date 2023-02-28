@@ -1,7 +1,6 @@
 .tasks {
   list-style: none;
 }
-
 .tasks__item {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -10,7 +9,6 @@
   padding: 10px;
   grid-gap: 10px;
 }
-
 .tasks__buttonDone {
   background-color: rgb(13, 129, 13);
   color: white;
@@ -21,13 +19,16 @@
 .tasks__buttonDone:hover {
   background-color: rgb(93, 218, 93);
 }
-
 .tasks__contentDone {
   text-decoration: line-through;
 }
-
 .tasks__button-remove {
   background: red;
   color: white;
   border: none;
+  width: 25px;
+  height: 25px;
+}
+.tasks__button-remove:hover {
+  background: rgb(255, 81, 81);
 }
