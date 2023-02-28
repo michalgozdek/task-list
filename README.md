@@ -5,7 +5,8 @@
 
 <img src="images/rm.png">
 
-<p>Technologje użyte do stworzenia strony
+<p>Technologje użyte do stworzenia strony</p>
+<a>https://michalgozdek.github.io/task-list/</a>
 <ul>
 <li>HTML</li>
 <li>CSS</li>
