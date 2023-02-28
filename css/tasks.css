@@ -28,4 +28,6 @@
 
 .tasks__button-remove {
   background: red;
+  color: white;
+  border: none;
 }

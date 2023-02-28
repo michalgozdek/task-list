@@ -10,6 +10,16 @@
     render();
   };
 
+  const removeEvent = () => {
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    removeButtons.forEach((removeButtons, taskIndex) => {
+      removeButtons.addEventListener("click", () => {
+        removeTask(taskIndex);
+      });
+    });
+  };
+
   const render = () => {
     let htmlString = "";
 
@@ -24,7 +34,7 @@
         <span class="tasks__content  ${task.done ? "tasks__contentDone" : ""}">
         ${task.content}
         </span>
-        <button class"tasks__button tasks__button-remove js-remove">
+        <button class="tasks__button tasks__button-remove js-remove">
         🗑
         </button>
         </li>
@@ -32,13 +42,7 @@
     }
     document.querySelector(".js-task").innerHTML = htmlString;
 
-    const removeButtons = document.querySelectorAll(".js-remove");
-
-    removeButtons.forEach((removeButtons, taskIndex) => {
-      removeButtons.addEventListener("click", () => {
-        removeTask(taskIndex);
-      });
-    });
+    removeEvent();
 
     const toggleDoneButtons = document.querySelectorAll(".js-done");
 
