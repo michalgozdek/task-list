@@ -1,10 +1,9 @@
 .form {
-  display: inline-block;
   display: grid;
   grid-template-columns: 1fr auto;
 }
 .form__input {
-  margin-right: 15px;
+  grid-gap: 15px;
   border: 1px solid rgb(170, 173, 173);
 }
 .form__button {
