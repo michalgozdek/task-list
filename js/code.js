@@ -20,6 +20,16 @@
     });
   };
 
+  const bindToggleDoneButtons = () => {
+    const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+    toggleDoneButtons.forEach((toggleDoneButtons, index) => {
+      toggleDoneButtons.addEventListener("click", () => {
+        toggleTaskDone(index);
+      });
+    });
+  };
+
   const render = () => {
     let htmlString = "";
 
@@ -28,7 +38,6 @@
         <li 
         class="tasks__item js-tasks">
         <button class="tasks__buttonDone js-done">
-
         ${task.done ? "✓" : ""}
         </button>
         <span class=" ${task.done ? "tasks__contentDone" : ""}">
@@ -40,17 +49,11 @@
         </li>
         `;
     }
+
     document.querySelector(".js-task").innerHTML = htmlString;
 
     removeEvent();
-
-    const toggleDoneButtons = document.querySelectorAll(".js-done");
-
-    toggleDoneButtons.forEach((toggleDoneButtons, index) => {
-      toggleDoneButtons.addEventListener("click", () => {
-        toggleTaskDone(index);
-      });
-    });
+    bindToggleDoneButtons();
   };
 
   const init = () => {
@@ -74,5 +77,6 @@
       newTaskElement.focus();
     });
   };
+
   init();
 }
