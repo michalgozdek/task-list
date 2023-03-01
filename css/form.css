@@ -12,10 +12,10 @@
   border: 1px solid rgb(170, 173, 173);
 }
 .form__button {
-  background-color: rgb(168, 75, 255);
+  background-color: teal;
   color: #fff;
   padding: 10px;
 }
 .form__button:hover {
-  background-color: hsl(271, 92%, 71%);
+  background-color: rgb(16, 194, 194);
 }
