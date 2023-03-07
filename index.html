@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=!, initial-scale=1.0" />
+    <meta name="viewport" content="width=1, initial-scale=1.0" />
     <title>Lista zadań</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,6 @@
     />
     <link href="css/body.css" rel="stylesheet" />
     <link href="css/tasks.css" rel="stylesheet" />
-    <link href="css/flex.css" rel="stylesheet" />
     <link href="css/form.css" rel="stylesheet" />
     <link href="css/buttons.css" rel="stylesheet" />
     <link href="css/section.css" rel="stylesheet" />
@@ -30,11 +29,11 @@
     <header>
       <h1>Lista zadań</h1>
     </header>
-    <div class="flex">
-      <div class="flex__item">
-        <span class="flex__header"> Dodaj nowe zadanie</span>
+    <div class="section">
+      <div class="section__item">
+        <span class="section__header"> Dodaj nowe zadanie</span>
       </div>
-      <div class="flex__item">
+      <div class="section__item">
         <form class="form js-form">
           <input
             class="form__input js-newTask"
@@ -45,9 +44,9 @@
         </form>
       </div>
     </div>
-    <div class="flex">
-      <section class="section">
-      <div class= flex__header >Lista zadań</div>
+    <div class="section">
+      <section class="section__body">
+      <div class="section__header">Lista zadań</div>
       <div class="button js-buttons"></div>
     </section>
       <div>

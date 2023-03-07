@@ -6,7 +6,7 @@
   grid-template-columns: auto 1fr auto;
   border-bottom: 2px solid rgb(219, 224, 224);
   align-items: center;
-  padding: 10px;
+  padding: 10px; 
   grid-gap: 10px;
 }
 .tasks__buttonDone {

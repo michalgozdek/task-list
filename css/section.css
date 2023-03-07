@@ -1,4 +1,4 @@
-.section{
+.section__body{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -6,3 +6,21 @@
     padding: 10px;
 
 }
+.section {
+    border: 1px solid grey;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+  }
+  .section__item {
+    padding: 10px;
+    border-bottom: 2px solid rgb(219, 224, 224);
+  }
+  .section__header {
+    font-size: 30px;
+  }
+  

@@ -11,6 +11,7 @@
         },
         ...tasks.slice(taskIndex + 1),
       ]
+      render();
   };
 
   const removeTask = (taskIndex) => {
@@ -73,8 +74,8 @@ const toggleHideDoneTasks = () => {
     const taskToHTML = (task) => `
         <li 
         class="tasks__item ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""} js-task">
-        <button class="tasks__buttonDone js-done">
-
+           <button class="tasks__buttonDone 
+        js-done">
         ${task.done ? "✓" : ""}
         </button>
         <span class=" ${task.done ? "tasks__contentDone" : ""}">
@@ -128,24 +129,34 @@ const bindButtonsEvents = () => {
  bindButtonsEvents();
  renderTasks();
  removeEvent();
- bindToggleDoneEvents()
+ bindToggleDoneEvents();
+ 
+ 
  
 };
-  const init = () => {
-    render();
-    const form = document.querySelector(".js-form");
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const newTaskElement = document.querySelector(".js-newTask");
-      const newTaskContent = newTaskElement.value.trim();
- 
 
-      if (newTaskContent !== "") {
-        addNewTask(newTaskContent);
-        newTaskElement.value = "";
-      }
-      newTaskElement.focus();
-    });
-  };
-  init();
+const onFormSubmit = (event) => {
+  event.preventDefault();
+
+  const formInput = document.querySelector(".js-newTask");
+  const newTaskContent = formInput.value.trim();
+
+  if (newTaskContent !== "") {
+      addNewTask(newTaskContent);
+      formInput.value = "";
+  }
+
+  formInput.focus();
+};
+
+const init = () => {
+  render();
+
+  const form = document.querySelector(".js-form");
+
+  form.addEventListener("submit", onFormSubmit);
+};
+
+init()
+ 
 }
