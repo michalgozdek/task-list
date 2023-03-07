@@ -1,14 +1,51 @@
 {
-  const tasks = [];
+  let tasks = [];
+  let hideDoneTasks = false;
 
-  const toggleTaskDone = (tasksIndex) => {
-    tasks[tasksIndex].done = !tasks[tasksIndex].done;
-    render();
+  const toggleTaskDone = (taskIndex) => {
+    tasks = [
+        ...tasks.slice(0, taskIndex),
+        {
+            ...tasks[taskIndex],
+            done: !tasks[taskIndex].done,
+        },
+        ...tasks.slice(taskIndex + 1),
+      ]
   };
+
   const removeTask = (taskIndex) => {
-    tasks.splice(taskIndex, 1);
+    tasks = [
+        ...tasks.slice(0, taskIndex),
+        ...tasks.slice(taskIndex + 1),
+    ];
+
+    render();
+
+  };
+
+  const addNewTask = (newTaskContent) => {
+    tasks = [
+        ...tasks,  
+        { content: newTaskContent },
+    ];
+
     render();
   };
+  const markAllTasksDone = () => {
+    tasks = tasks.map((task) => ({
+      ...task,
+      done: true,  
+    }));
+
+    render();
+};
+
+const toggleHideDoneTasks = () => {
+    hideDoneTasks = !hideDoneTasks;
+
+    render();
+};
+
 
   const removeEvent = () => {
     const removeButtons = document.querySelectorAll(".js-remove");
@@ -19,14 +56,23 @@
       });
     });
   };
+  const bindToggleDoneEvents = () => {
+    const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-  const render = () => {
-    let htmlString = "";
+    toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
+        toggleDoneButton.addEventListener("click", () => {
+            toggleTaskDone(taskIndex);
+        });
+    });
+};
 
-    for (const task of tasks) {
-      htmlString += `
+
+   const renderTasks = () => {
+   
+
+    const taskToHTML = (task) => `
         <li 
-        class="tasks__item js-tasks">
+        class="tasks__item ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""} js-task">
         <button class="tasks__buttonDone js-done">
 
         ${task.done ? "✓" : ""}
@@ -39,20 +85,52 @@
         </button>
         </li>
         `;
-    }
-    document.querySelector(".js-task").innerHTML = htmlString;
-
-    removeEvent();
-
-    const toggleDoneButtons = document.querySelectorAll(".js-done");
-
-    toggleDoneButtons.forEach((toggleDoneButtons, index) => {
-      toggleDoneButtons.addEventListener("click", () => {
-        toggleTaskDone(index);
-      });
-    });
+        const tasksList = document.querySelector(".js-task");
+        tasksList.innerHTML = tasks.map(taskToHTML).join("");
+    
   };
+  const renderButtons = () => {
+    const buttonsElement = document.querySelector(".js-buttons");
 
+    if (!tasks.length) {
+        buttonsElement.innerHTML = "";
+        return;
+    }
+
+    buttonsElement.innerHTML = `
+       <button class="buttons__button js-toggleHideDoneTasks">
+           ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+       </button>
+       <button 
+           class="buttons__button js-markAllTasksDone" 
+           ${tasks.every(({ done }) => done) ? "disabled" : ""}
+       >
+           Ukończ wszystkie
+       </button>
+    `;
+};
+
+const bindButtonsEvents = () => {
+    const markAllDoneButton = document.querySelector(".js-markAllTasksDone");
+
+    if(markAllDoneButton) {
+        markAllDoneButton.addEventListener("click", markAllTasksDone);
+    }
+
+    const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
+
+    if(toggleHideDoneTasksButton) {
+        toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+    }
+ };
+ const render = () => {
+ renderButtons();
+ bindButtonsEvents();
+ renderTasks();
+ removeEvent();
+ bindToggleDoneEvents()
+ 
+};
   const init = () => {
     render();
     const form = document.querySelector(".js-form");
@@ -60,12 +138,7 @@
       event.preventDefault();
       const newTaskElement = document.querySelector(".js-newTask");
       const newTaskContent = newTaskElement.value.trim();
-      const addNewTask = (newTaskContent) => {
-        tasks.push({
-          content: newTaskContent,
-        });
-        render();
-      };
+ 
 
       if (newTaskContent !== "") {
         addNewTask(newTaskContent);

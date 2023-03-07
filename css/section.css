@@ -1,0 +1,8 @@
+.section{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    border-bottom:  2px solid rgb(219, 224, 224); ;
+    padding: 10px;
+
+}

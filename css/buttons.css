@@ -1,0 +1,18 @@
+.button{
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    
+}
+.buttons__button {
+    border: none;
+    background-color: transparent;
+    color: teal;
+    margin: 0 0 0 20px;
+    border-bottom:  1;
+    transition: color 0.3s;
+
+}
+.buttons__button:hover{
+    color: rgb(39, 193, 193);
+}
