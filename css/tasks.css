@@ -15,9 +15,11 @@
   width: 25px;
   height: 25px;
   border: none;
+  transition: background 0.3s;
 }
 .tasks__buttonDone:hover {
   background-color: rgb(93, 218, 93);
+  
 }
 .tasks__contentDone {
   text-decoration: line-through;
@@ -28,6 +30,7 @@
   border: none;
   width: 25px;
   height: 25px;
+  transition: background 0.3s;
 }
 .tasks__button-remove:hover {
   background: rgb(255, 81, 81);

@@ -15,7 +15,9 @@
   background-color: teal;
   color: #fff;
   padding: 10px;
+  transition: background 0.3s;
 }
 .form__button:hover {
   background-color: rgb(16, 194, 194);
+  transform: scale(1.2);
 }
